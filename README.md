@@ -29,7 +29,22 @@ first-playbook.yaml: The actual playbook file containing tasks and roles to auto
 
 
 
-Create Role name test
+Create Role  named test
 ```
 ansible-galaxy role init test
 ```
+
+
+  test/
+  ├── defaults/
+  │   └── main.yml
+  ├── files/
+  ├── handlers/
+  │   └── main.yml
+  ├── meta/
+  │   └── main.yml
+  ├── tasks/
+  │   └── main.yml
+  ├── templates/
+  ├── vars/
+      └── main.yml

@@ -72,6 +72,81 @@ my_role/
 
 ---
 
+
+# Ansible Playbook to Role Conversion Guide
+
+This guide explains how to run an Ansible playbook and convert the playbook into a role.
+
+---
+
+## 1. Running the Playbook
+
+To run an Ansible playbook with a specific inventory file, use the following command:
+
+```bash
+ansible-playbook -i inventory.ini first-playbook.yaml
+```
+
+### Example Playbook (`first-playbook.yaml`):
+
+```yaml
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - test
+```
+
+---
+
+## 2. Converting the Playbook to a Role
+
+### Step 1: Create the Role
+
+To convert the playbook into a role, create a new role using the following command:
+
+```bash
+ansible-galaxy role init test
+```
+
+### Step 2: Define Tasks in `main.yaml`
+
+Once the role structure is created, place the tasks in `main.yaml` under the `test/tasks` directory.
+
+#### Example Task Structure:
+
+Place the following content in `test/tasks/main.yaml`:
+
+```yaml
+---
+# Example task structure
+- name: Ensure Nginx is installed
+  apt:
+    name: nginx
+    state: present
+```
+
+---
+
+## 3. Run the Playbook with the Role
+
+Now that the role is set up, you can run the playbook again using:
+
+```bash
+ansible-playbook -i inventory.ini first-playbook.yaml
+```
+
+This will run the tasks defined in the `test` role.
+
+---
+
+
+
+
+
+
+
+
 ## 5. Pushing Your Ansible Roles to Ansible Galaxy
 
 ### Step 1: Verify `ansible-galaxy` CLI

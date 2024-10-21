@@ -1,11 +1,6 @@
-# ansible_
+## Ansible Playbook Command
 
--ansible-playbook: The Ansible command to execute playbooks.
+To run an Ansible playbook with a specific inventory file, use the following command:
 
- -i inventory.ini: Specifies the inventory file inventory.ini that contains the list of hosts or groups of hosts where the tasks will be executed.
-
- first-playbook.yaml: The actual playbook file that contains tasks and roles to automate on the target hosts defined in the inventory file.
-
-```
-ansible-playbook -i inventory.ini  first-playbook.yaml
-```
+```bash
+ansible-playbook -i inventory.ini first-playbook.yaml
